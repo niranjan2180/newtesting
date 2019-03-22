@@ -6,6 +6,9 @@ import android.view.MenuItem;
 
 import com.eisedo.eisedo.R;
 import com.eisedo.eisedo.util.ViewModelFactory;
+import com.microsoft.appcenter.AppCenter;
+import com.microsoft.appcenter.analytics.Analytics;
+import com.microsoft.appcenter.crashes.Crashes;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -25,6 +28,7 @@ public class CheckListActivity extends AppCompatActivity  {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activtiy_check_list);
+        AppCenter.start(getApplication(), "de79cba7-31ed-4940-91e8-f2cb280e2a2e", Analytics.class, Crashes.class);
         checkListViewModel = obtainViewModel(this);
 //            NavHostFragment finalHost = NavHostFragment.create(R.navigation.check_list_nav);
 //            finalHost.getNavController().removeOnDestinationChangedListener((controller, destination, arguments) -> {

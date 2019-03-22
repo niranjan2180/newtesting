@@ -27,6 +27,9 @@ import com.eisedo.eisedo.data.remote.Dao.PostSample;
 import com.eisedo.eisedo.data.remote.EiseDoApiInterface;
 import com.eisedo.eisedo.home.HomeActivity;
 import com.eisedo.eisedo.util.ViewModelFactory;
+import com.microsoft.appcenter.AppCenter;
+import com.microsoft.appcenter.analytics.Analytics;
+import com.microsoft.appcenter.crashes.Crashes;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -72,6 +75,8 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        AppCenter.start(getApplication(), "de79cba7-31ed-4940-91e8-f2cb280e2a2e", Analytics.class, Crashes.class);
 
 //        networkCall();
 //        TelephonyManager telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);

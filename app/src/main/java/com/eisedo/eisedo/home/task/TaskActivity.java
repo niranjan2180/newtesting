@@ -11,6 +11,9 @@ import com.eisedo.eisedo.home.sort.SortFilterFragment;
 import com.eisedo.eisedo.home.sort.SortFragment;
 import com.eisedo.eisedo.home.task.repeat.RepeatFragment;
 import com.eisedo.eisedo.util.ViewModelFactory;
+import com.microsoft.appcenter.AppCenter;
+import com.microsoft.appcenter.analytics.Analytics;
+import com.microsoft.appcenter.crashes.Crashes;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,6 +32,8 @@ public class TaskActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        AppCenter.start(getApplication(), "de79cba7-31ed-4940-91e8-f2cb280e2a2e", Analytics.class, Crashes.class);
 
         activityTaskBinding = DataBindingUtil.setContentView(this, R.layout.activity_task);
 
