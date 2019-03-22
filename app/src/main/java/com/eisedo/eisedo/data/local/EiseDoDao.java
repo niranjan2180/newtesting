@@ -66,7 +66,7 @@ public interface EiseDoDao {
 
     // TODO --verify the query
     // get delegated Tasks
-    @Query("SELECT * FROM task WHERE delegate_name IS NOT NULL OR delegate_name != '' AND progress != 100")
+    @Query("SELECT * FROM task WHERE delegate_name IS NOT NULL OR delegate_name != '' AND progress != 100 AND deleted != 1")
     List<Task> getDelegatedTasks();
 
     //Trashed Tasks
