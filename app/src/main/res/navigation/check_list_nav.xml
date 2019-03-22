@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/check_list_nav"
+    app:startDestination="@id/listsFragment">
+    <fragment
+        android:id="@+id/listsFragment"
+        android:name="com.eisedo.eisedo.home.lists.ListsFragment"
+        android:label="ListsFragment" >
+        <action
+            android:id="@+id/action_listsFragment_to_addEditList"
+            app:destination="@id/addEditList" />
+        <action
+            android:id="@+id/action_listsFragment_to_checkListFragment"
+            app:destination="@id/checkListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addEditList"
+        android:name="com.eisedo.eisedo.home.lists.add_edit_list.AddEditList"
+        android:label="AddEditList" />
+    <fragment
+        android:id="@+id/checkListFragment"
+        android:name="com.eisedo.eisedo.home.lists.check_list.CheckListFragment"
+        android:label="CheckListFragment" />
+</navigation>

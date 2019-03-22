@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.eisedo.eisedo">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.SET_ALARM" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@drawable/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".login.LoginActivity"
+            android:theme="@style/AppTheme_NoActionbar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".home.HomeActivity" />
+        <activity
+            android:name=".setting.SettingActivity"
+            android:theme="@style/AppTheme_NoAction" />
+        <activity
+            android:name=".home.home_item.HomeItemsActivity"
+            android:theme="@style/AppTheme_NoAction" />
+
+        <activity
+            android:name=".home.task.TaskActivity"
+            android:theme="@style/AppTheme_NoAction" />
+
+        <activity
+            android:name=".check_list.CheckListActivity"
+            android:theme="@style/AppTheme_NoAction" />
+
+        <service
+            android:name=".background.AlarmCheckIntentService"
+            android:exported="false" />
+
+        <service
+            android:name=".background.AlarmJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <receiver android:name=".broadcast_receiver.AlarmReceiver" />
+        <receiver android:name=".broadcast_receiver.TaskAlarmReceiver" />
+        <receiver android:name=".broadcast_receiver.BootChangeReceiver" />
+        <receiver android:name=".broadcast_receiver.DayChangeReceiver" />
+
+        <uses-library
+            android:name="android.test.runner"
+            android:required="false" />
+    </application>
+
+</manifest>

@@ -12,7 +12,6 @@ import androidx.databinding.DataBindingComponent;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
-import com.eisedo.eisedo.data.local.entities.CheckList;
 import com.eisedo.eisedo.data.local.entities.CheckListItem;
 import java.util.ArrayList;
 
@@ -29,12 +28,6 @@ public abstract class FragmentCheckListBinding extends ViewDataBinding {
   @Bindable
   protected ArrayList<CheckListItem> mCheckListItems;
 
-  @Bindable
-  protected CheckList mCheckList;
-
-  @Bindable
-  protected CheckListItem mCheckListItem;
-
   protected FragmentCheckListBinding(DataBindingComponent _bindingComponent, View _root,
       int _localFieldCount, EditText etCheckListName, RecyclerView rvCheckItems, Toolbar toolbar4) {
     super(_bindingComponent, _root, _localFieldCount);
@@ -48,20 +41,6 @@ public abstract class FragmentCheckListBinding extends ViewDataBinding {
   @Nullable
   public ArrayList<CheckListItem> getCheckListItems() {
     return mCheckListItems;
-  }
-
-  public abstract void setCheckList(@Nullable CheckList checkList);
-
-  @Nullable
-  public CheckList getCheckList() {
-    return mCheckList;
-  }
-
-  public abstract void setCheckListItem(@Nullable CheckListItem checkListItem);
-
-  @Nullable
-  public CheckListItem getCheckListItem() {
-    return mCheckListItem;
   }
 
   @NonNull

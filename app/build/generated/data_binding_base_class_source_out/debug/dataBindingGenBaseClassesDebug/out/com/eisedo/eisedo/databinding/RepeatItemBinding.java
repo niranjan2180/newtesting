@@ -28,7 +28,7 @@ public abstract class RepeatItemBinding extends ViewDataBinding {
   protected RepeatType mRepeatType;
 
   @Bindable
-  protected Boolean mSelectedPosition;
+  protected Integer mSelectedPosition;
 
   @Bindable
   protected View mView;
@@ -49,10 +49,10 @@ public abstract class RepeatItemBinding extends ViewDataBinding {
     return mRepeatType;
   }
 
-  public abstract void setSelectedPosition(@Nullable Boolean selectedPosition);
+  public abstract void setSelectedPosition(@Nullable Integer selectedPosition);
 
   @Nullable
-  public Boolean getSelectedPosition() {
+  public Integer getSelectedPosition() {
     return mSelectedPosition;
   }
 

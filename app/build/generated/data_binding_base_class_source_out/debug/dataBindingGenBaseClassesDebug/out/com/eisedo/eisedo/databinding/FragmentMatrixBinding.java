@@ -10,8 +10,8 @@ import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingComponent;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
+import com.eisedo.eisedo.data.local.entities.MatrixHeadings;
 import com.eisedo.eisedo.data.local.entities.User;
-import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
 public abstract class FragmentMatrixBinding extends ViewDataBinding {
@@ -42,30 +42,17 @@ public abstract class FragmentMatrixBinding extends ViewDataBinding {
   @NonNull
   public final TextView textView7;
 
-  @NonNull
-  public final TextInputEditText tieBuck1;
-
-  @NonNull
-  public final TextInputEditText tieBuck2;
-
-  @NonNull
-  public final TextInputEditText tieBuck3;
-
-  @NonNull
-  public final TextInputEditText tieBuck4;
-
-  @NonNull
-  public final TextInputEditText tieUrgency;
-
   @Bindable
   protected User mUser;
+
+  @Bindable
+  protected MatrixHeadings mMartixheadings;
 
   protected FragmentMatrixBinding(DataBindingComponent _bindingComponent, View _root,
       int _localFieldCount, ToolBarBinding tbMatrix, TextInputLayout textInputLayout10,
       TextInputLayout textInputLayout11, TextInputLayout textInputLayout8,
       TextInputLayout textInputLayout9, TextView textView3, TextView textView4, TextView textView6,
-      TextView textView7, TextInputEditText tieBuck1, TextInputEditText tieBuck2,
-      TextInputEditText tieBuck3, TextInputEditText tieBuck4, TextInputEditText tieUrgency) {
+      TextView textView7) {
     super(_bindingComponent, _root, _localFieldCount);
     this.tbMatrix = tbMatrix;
     setContainedBinding(this.tbMatrix);;
@@ -77,11 +64,6 @@ public abstract class FragmentMatrixBinding extends ViewDataBinding {
     this.textView4 = textView4;
     this.textView6 = textView6;
     this.textView7 = textView7;
-    this.tieBuck1 = tieBuck1;
-    this.tieBuck2 = tieBuck2;
-    this.tieBuck3 = tieBuck3;
-    this.tieBuck4 = tieBuck4;
-    this.tieUrgency = tieUrgency;
   }
 
   public abstract void setUser(@Nullable User user);
@@ -89,6 +71,13 @@ public abstract class FragmentMatrixBinding extends ViewDataBinding {
   @Nullable
   public User getUser() {
     return mUser;
+  }
+
+  public abstract void setMartixheadings(@Nullable MatrixHeadings martixheadings);
+
+  @Nullable
+  public MatrixHeadings getMartixheadings() {
+    return mMartixheadings;
   }
 
   @NonNull

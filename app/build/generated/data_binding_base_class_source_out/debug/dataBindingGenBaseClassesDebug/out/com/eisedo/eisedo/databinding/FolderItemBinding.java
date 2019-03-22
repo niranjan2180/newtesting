@@ -12,49 +12,35 @@ import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingComponent;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
-import com.eisedo.eisedo.data.local.entities.SubProject;
+import com.eisedo.eisedo.data.local.entities.Folder;
 
 public abstract class FolderItemBinding extends ViewDataBinding {
   @NonNull
-  public final ConstraintLayout clContainer1;
+  public final ConstraintLayout clContainer;
 
   @NonNull
   public final ImageView ivFolder;
 
   @NonNull
-  public final ImageView ivSelected;
-
-  @NonNull
   public final TextView tvFolderName;
 
   @Bindable
-  protected SubProject mSubProject;
-
-  @Bindable
-  protected String mFolderId;
+  protected Folder mFolder;
 
   protected FolderItemBinding(DataBindingComponent _bindingComponent, View _root,
-      int _localFieldCount, ConstraintLayout clContainer1, ImageView ivFolder, ImageView ivSelected,
+      int _localFieldCount, ConstraintLayout clContainer, ImageView ivFolder,
       TextView tvFolderName) {
     super(_bindingComponent, _root, _localFieldCount);
-    this.clContainer1 = clContainer1;
+    this.clContainer = clContainer;
     this.ivFolder = ivFolder;
-    this.ivSelected = ivSelected;
     this.tvFolderName = tvFolderName;
   }
 
-  public abstract void setSubProject(@Nullable SubProject subProject);
+  public abstract void setFolder(@Nullable Folder folder);
 
   @Nullable
-  public SubProject getSubProject() {
-    return mSubProject;
-  }
-
-  public abstract void setFolderId(@Nullable String folderId);
-
-  @Nullable
-  public String getFolderId() {
-    return mFolderId;
+  public Folder getFolder() {
+    return mFolder;
   }
 
   @NonNull

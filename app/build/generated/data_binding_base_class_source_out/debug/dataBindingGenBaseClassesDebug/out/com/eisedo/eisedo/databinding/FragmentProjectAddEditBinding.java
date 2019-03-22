@@ -11,7 +11,7 @@ import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingComponent;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
-import com.eisedo.eisedo.data.local.entities.Project;
+import com.eisedo.eisedo.data.local.entities.Folder;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -20,32 +20,32 @@ public abstract class FragmentProjectAddEditBinding extends ViewDataBinding {
   public final Button btnDelete;
 
   @NonNull
-  public final Toolbar tbAddEdit;
-
-  @NonNull
   public final TextInputLayout textInputLayout14;
 
   @NonNull
   public final TextInputEditText tieProjectName;
 
+  @NonNull
+  public final Toolbar toolbar;
+
   @Bindable
-  protected Project mProject;
+  protected Folder mFolder;
 
   protected FragmentProjectAddEditBinding(DataBindingComponent _bindingComponent, View _root,
-      int _localFieldCount, Button btnDelete, Toolbar tbAddEdit, TextInputLayout textInputLayout14,
-      TextInputEditText tieProjectName) {
+      int _localFieldCount, Button btnDelete, TextInputLayout textInputLayout14,
+      TextInputEditText tieProjectName, Toolbar toolbar) {
     super(_bindingComponent, _root, _localFieldCount);
     this.btnDelete = btnDelete;
-    this.tbAddEdit = tbAddEdit;
     this.textInputLayout14 = textInputLayout14;
     this.tieProjectName = tieProjectName;
+    this.toolbar = toolbar;
   }
 
-  public abstract void setProject(@Nullable Project project);
+  public abstract void setFolder(@Nullable Folder folder);
 
   @Nullable
-  public Project getProject() {
-    return mProject;
+  public Folder getFolder() {
+    return mFolder;
   }
 
   @NonNull

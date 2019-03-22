@@ -21,7 +21,7 @@ public abstract class FragmentCompleteBinding extends ViewDataBinding {
   public final Toolbar tbTitleBar;
 
   @Bindable
-  protected HomeItemViewModel mHomeItemViewModel;
+  protected HomeItemViewModel mHomeItmeViewModel;
 
   protected FragmentCompleteBinding(DataBindingComponent _bindingComponent, View _root,
       int _localFieldCount, RecyclerView rvItems, Toolbar tbTitleBar) {
@@ -30,11 +30,11 @@ public abstract class FragmentCompleteBinding extends ViewDataBinding {
     this.tbTitleBar = tbTitleBar;
   }
 
-  public abstract void setHomeItemViewModel(@Nullable HomeItemViewModel homeItemViewModel);
+  public abstract void setHomeItmeViewModel(@Nullable HomeItemViewModel homeItmeViewModel);
 
   @Nullable
-  public HomeItemViewModel getHomeItemViewModel() {
-    return mHomeItemViewModel;
+  public HomeItemViewModel getHomeItmeViewModel() {
+    return mHomeItmeViewModel;
   }
 
   @NonNull

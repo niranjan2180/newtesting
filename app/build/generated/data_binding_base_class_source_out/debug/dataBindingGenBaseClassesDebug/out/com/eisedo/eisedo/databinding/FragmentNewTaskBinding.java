@@ -26,9 +26,6 @@ public abstract class FragmentNewTaskBinding extends ViewDataBinding {
   public final EditText etTitle;
 
   @NonNull
-  public final ImageView ivFavourite;
-
-  @NonNull
   public final Switch switchImportance;
 
   @NonNull
@@ -45,6 +42,9 @@ public abstract class FragmentNewTaskBinding extends ViewDataBinding {
 
   @NonNull
   public final TextView tvDueDate;
+
+  @NonNull
+  public final ImageView tvFavourite;
 
   @NonNull
   public final TextView tvFolder;
@@ -78,20 +78,20 @@ public abstract class FragmentNewTaskBinding extends ViewDataBinding {
 
   protected FragmentNewTaskBinding(DataBindingComponent _bindingComponent, View _root,
       int _localFieldCount, ConstraintLayout constraintLayout, EditText etTitle,
-      ImageView ivFavourite, Switch switchImportance, Toolbar tbNewItem, TextView tvAddNote,
-      TextView tvClose, TextView tvDelegate, TextView tvDueDate, TextView tvFolder,
+      Switch switchImportance, Toolbar tbNewItem, TextView tvAddNote, TextView tvClose,
+      TextView tvDelegate, TextView tvDueDate, ImageView tvFavourite, TextView tvFolder,
       TextView tvMessage, TextView tvReminder, TextView tvRepeat, TextView tvSave, TextView tvTitle,
       View view5, View viewDueDate) {
     super(_bindingComponent, _root, _localFieldCount);
     this.constraintLayout = constraintLayout;
     this.etTitle = etTitle;
-    this.ivFavourite = ivFavourite;
     this.switchImportance = switchImportance;
     this.tbNewItem = tbNewItem;
     this.tvAddNote = tvAddNote;
     this.tvClose = tvClose;
     this.tvDelegate = tvDelegate;
     this.tvDueDate = tvDueDate;
+    this.tvFavourite = tvFavourite;
     this.tvFolder = tvFolder;
     this.tvMessage = tvMessage;
     this.tvReminder = tvReminder;

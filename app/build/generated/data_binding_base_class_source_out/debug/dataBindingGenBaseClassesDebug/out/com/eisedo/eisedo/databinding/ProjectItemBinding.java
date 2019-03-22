@@ -13,7 +13,7 @@ import androidx.databinding.DataBindingComponent;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
-import com.eisedo.eisedo.data.local.entities.Project;
+import com.eisedo.eisedo.data.local.entities.Folder;
 
 public abstract class ProjectItemBinding extends ViewDataBinding {
   @NonNull
@@ -29,7 +29,7 @@ public abstract class ProjectItemBinding extends ViewDataBinding {
   public final TextView tvProjectName;
 
   @Bindable
-  protected Project mProject;
+  protected Folder mFolder;
 
   protected ProjectItemBinding(DataBindingComponent _bindingComponent, View _root,
       int _localFieldCount, ConstraintLayout clContainer, ImageView ivHolder,
@@ -41,11 +41,11 @@ public abstract class ProjectItemBinding extends ViewDataBinding {
     this.tvProjectName = tvProjectName;
   }
 
-  public abstract void setProject(@Nullable Project project);
+  public abstract void setFolder(@Nullable Folder folder);
 
   @Nullable
-  public Project getProject() {
-    return mProject;
+  public Folder getFolder() {
+    return mFolder;
   }
 
   @NonNull

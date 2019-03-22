@@ -3,7 +3,6 @@ package com.eisedo.eisedo.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -13,49 +12,35 @@ import androidx.databinding.DataBindingComponent;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
-import com.eisedo.eisedo.data.local.entities.Project;
+import com.eisedo.eisedo.data.local.entities.Folder;
 
 public abstract class ProjectItemSelectionBinding extends ViewDataBinding {
   @NonNull
   public final ConstraintLayout clContainer;
 
   @NonNull
-  public final ImageView ivSelected;
-
-  @NonNull
-  public final RecyclerView rvSubProject;
+  public final RecyclerView rvFolderList;
 
   @NonNull
   public final TextView tvProjectName;
 
   @Bindable
-  protected String mProjectID;
-
-  @Bindable
-  protected Project mProject;
+  protected Folder mFolder;
 
   protected ProjectItemSelectionBinding(DataBindingComponent _bindingComponent, View _root,
-      int _localFieldCount, ConstraintLayout clContainer, ImageView ivSelected,
-      RecyclerView rvSubProject, TextView tvProjectName) {
+      int _localFieldCount, ConstraintLayout clContainer, RecyclerView rvFolderList,
+      TextView tvProjectName) {
     super(_bindingComponent, _root, _localFieldCount);
     this.clContainer = clContainer;
-    this.ivSelected = ivSelected;
-    this.rvSubProject = rvSubProject;
+    this.rvFolderList = rvFolderList;
     this.tvProjectName = tvProjectName;
   }
 
-  public abstract void setProjectID(@Nullable String projectID);
+  public abstract void setFolder(@Nullable Folder folder);
 
   @Nullable
-  public String getProjectID() {
-    return mProjectID;
-  }
-
-  public abstract void setProject(@Nullable Project project);
-
-  @Nullable
-  public Project getProject() {
-    return mProject;
+  public Folder getFolder() {
+    return mFolder;
   }
 
   @NonNull

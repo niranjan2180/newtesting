@@ -3,9 +3,10 @@ package com.eisedo.eisedo.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.Toolbar;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingComponent;
 import androidx.databinding.DataBindingUtil;
@@ -15,19 +16,32 @@ import com.eisedo.eisedo.data.local.entities.Folder;
 
 public abstract class FragmentProjectBinding extends ViewDataBinding {
   @NonNull
-  public final RecyclerView rvProjects;
+  public final Button btnAddFolder;
 
   @NonNull
-  public final Toolbar tbProject;
+  public final RecyclerView rvDoLaterTasks;
+
+  @NonNull
+  public final RecyclerView rvDoNowTasks;
+
+  @NonNull
+  public final TextView textView;
+
+  @NonNull
+  public final TextView textView2;
 
   @Bindable
   protected Folder mFolder;
 
   protected FragmentProjectBinding(DataBindingComponent _bindingComponent, View _root,
-      int _localFieldCount, RecyclerView rvProjects, Toolbar tbProject) {
+      int _localFieldCount, Button btnAddFolder, RecyclerView rvDoLaterTasks,
+      RecyclerView rvDoNowTasks, TextView textView, TextView textView2) {
     super(_bindingComponent, _root, _localFieldCount);
-    this.rvProjects = rvProjects;
-    this.tbProject = tbProject;
+    this.btnAddFolder = btnAddFolder;
+    this.rvDoLaterTasks = rvDoLaterTasks;
+    this.rvDoNowTasks = rvDoNowTasks;
+    this.textView = textView;
+    this.textView2 = textView2;
   }
 
   public abstract void setFolder(@Nullable Folder folder);

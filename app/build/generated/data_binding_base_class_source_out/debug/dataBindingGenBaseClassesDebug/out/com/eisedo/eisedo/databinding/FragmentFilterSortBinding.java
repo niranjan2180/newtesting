@@ -5,7 +5,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.Toolbar;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingComponent;
 import androidx.databinding.DataBindingUtil;
@@ -18,17 +17,13 @@ public abstract class FragmentFilterSortBinding extends ViewDataBinding {
   @NonNull
   public final RecyclerView rvSorts;
 
-  @NonNull
-  public final Toolbar tbSortFilter;
-
   @Bindable
   protected ArrayList<SortFilter> mFilterList;
 
   protected FragmentFilterSortBinding(DataBindingComponent _bindingComponent, View _root,
-      int _localFieldCount, RecyclerView rvSorts, Toolbar tbSortFilter) {
+      int _localFieldCount, RecyclerView rvSorts) {
     super(_bindingComponent, _root, _localFieldCount);
     this.rvSorts = rvSorts;
-    this.tbSortFilter = tbSortFilter;
   }
 
   public abstract void setFilterList(@Nullable ArrayList<SortFilter> filterList);

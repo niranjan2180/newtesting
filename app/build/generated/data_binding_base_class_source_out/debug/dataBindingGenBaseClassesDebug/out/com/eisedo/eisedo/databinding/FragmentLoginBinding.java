@@ -9,7 +9,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingComponent;
 import androidx.databinding.DataBindingUtil;
@@ -20,9 +19,6 @@ import com.eisedo.eisedo.login.LoginViewModel;
 public abstract class FragmentLoginBinding extends ViewDataBinding {
   @NonNull
   public final Button btnSubmit;
-
-  @NonNull
-  public final ConstraintLayout clContainer;
 
   @NonNull
   public final EditText etEmail;
@@ -46,11 +42,10 @@ public abstract class FragmentLoginBinding extends ViewDataBinding {
   protected LoginHandler mHandler;
 
   protected FragmentLoginBinding(DataBindingComponent _bindingComponent, View _root,
-      int _localFieldCount, Button btnSubmit, ConstraintLayout clContainer, EditText etEmail,
-      EditText etPassword, ImageView ivIcon, TextView tvForgetPassword, TextView tvRegister) {
+      int _localFieldCount, Button btnSubmit, EditText etEmail, EditText etPassword,
+      ImageView ivIcon, TextView tvForgetPassword, TextView tvRegister) {
     super(_bindingComponent, _root, _localFieldCount);
     this.btnSubmit = btnSubmit;
-    this.clContainer = clContainer;
     this.etEmail = etEmail;
     this.etPassword = etPassword;
     this.ivIcon = ivIcon;

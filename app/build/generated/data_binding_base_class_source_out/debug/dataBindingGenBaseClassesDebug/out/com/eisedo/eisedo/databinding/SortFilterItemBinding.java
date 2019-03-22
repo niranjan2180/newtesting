@@ -34,9 +34,6 @@ public abstract class SortFilterItemBinding extends ViewDataBinding {
   protected int mPosition;
 
   @Bindable
-  protected int mSelectedPosition;
-
-  @Bindable
   protected View mView;
 
   protected SortFilterItemBinding(DataBindingComponent _bindingComponent, View _root,
@@ -60,12 +57,6 @@ public abstract class SortFilterItemBinding extends ViewDataBinding {
 
   public int getPosition() {
     return mPosition;
-  }
-
-  public abstract void setSelectedPosition(int selectedPosition);
-
-  public int getSelectedPosition() {
-    return mSelectedPosition;
   }
 
   public abstract void setView(@Nullable View view);
